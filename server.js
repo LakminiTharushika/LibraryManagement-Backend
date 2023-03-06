@@ -4,6 +4,12 @@ let cors = require('cors')
 let path = require('path')
 const { MONGO_URI } = require("./keys");
 
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200,
+    methods: ['GET', 'PUT', 'POST', 'DELETE', 'HEAD'],
+    credentials: true,
+};
 
 // const api = require('./backend/routes') admin2021 123456
 
@@ -19,7 +25,7 @@ mongoose.connection.on("connected", () => {
 
 const app = express();
 app.use(express.json())
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use('/public', express.static('public'));
 
