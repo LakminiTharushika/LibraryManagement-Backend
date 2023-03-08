@@ -39,7 +39,7 @@ if (process.env.NODE_ENV === 'production') {
 
     app.get('*', (req, res) => {
 
-        res.sendFile(path.resolve(__dirname, 'https://libmanfront.onrender.com/index.html'))
+        res.sendFile(path.resolve('https://libmanfront.onrender.com/index.html'))
 
     })
 }
