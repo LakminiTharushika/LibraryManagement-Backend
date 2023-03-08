@@ -34,15 +34,15 @@ app.use('/api/books', require("./routes/book_route"))
 app.use('/api/issues', require("./routes/issue_route"))
 
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use('/', express.static('client/build'))
+if (process.env.NODE_ENV === 'production') {
+    app.use('/', express.static('https://libman-g4p5.onrender.com/build'))
 
-//     app.get('*', (req, res) => {
+    app.get('*', (req, res) => {
 
-//         res.sendFile(path.resolve(__dirname, 'client/build/index.html'))
+        res.sendFile(path.resolve(__dirname, 'https://libman-g4p5.onrender.com/build/index.html'))
 
-//     })
-// }
+    })
+}
 
 
 const port = process.env.PORT || 4000;
