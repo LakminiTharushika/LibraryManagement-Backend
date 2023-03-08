@@ -35,11 +35,11 @@ app.use('/api/issues', require("./routes/issue_route"))
 
 
 if (process.env.NODE_ENV === 'production') {
-    app.use('/', express.static('https://libman-g4p5.onrender.com/build'))
+    app.use('/', express.static('https://libmanfront.onrender.com/'))
 
     app.get('*', (req, res) => {
 
-        res.sendFile(path.resolve(__dirname, 'https://libman-g4p5.onrender.com/build/index.html'))
+        res.sendFile(path.resolve(__dirname, 'https://libmanfront.onrender.com/index.html'))
 
     })
 }
